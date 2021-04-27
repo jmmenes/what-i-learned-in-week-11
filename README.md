@@ -2,159 +2,116 @@
 
 &nbsp;
 
-## Github Pages
+## Front End Development
 
-https://pages.github.com/#user-site
+Front-end web development, also known as client-side development is the practice of producing HTML, CSS and JavaScript for a website or Web Application so that a user can see and interact with them directly. The challenge associated with front end development is that the tools and techniques used to create the front end of a website change constantly and so the developer needs to constantly be aware of how the field is developing.
 
-https://pages.github.com/
-
-GitHub Pages is a static site hosting service that takes HTML, CSS, and JavaScript files straight from a repository on GitHub, optionally runs the files
-
-You can host your site on GitHub's github.io domain or your own custom domain.
+The objective of designing a site is to ensure that when the users open up the site they see the information in a format that is easy to read and relevant. This is further complicated by the fact that users now use a large variety of devices with varying screen sizes and resolutions thus forcing the designer to take into consideration these aspects when designing the site. They need to ensure that their site comes up correctly in different browsers (cross-browser), different operating systems (cross-platform) and different devices (cross-device), which requires careful planning on the side of the developer.
 
 &nbsp;
 
-## HTML, CSS Review
+## Back End Development
 
-Hypertext Markup Language (HTML) is the standard markup language for documents designed to be displayed in a web browser. It can be assisted by technologies such as Cascading Style Sheets (CSS) and scripting languages such as JavaScript.
+Backend developers are primarily focused on how a website works. They write code that focuses on the functionality and logic powering the application they’re working on, and the technology they work on is never directly seen by users.
 
-Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language such as HTML. CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.
+The tech of the back end is a combination of servers, applications, and databases.
 
-&nbsp;
+Responsibilities of backend programmers could involve writing APIs, writing code to interact with a database, creating libraries, working on business processes and data architecture, and much more. It often depends on the specific role and company.
 
-## DOM Manipulation (Document Object Model)
-
-The Document Object Model (DOM) is the data representation of the objects that comprise the structure and content of a document on the web.
-
-The Document Object Model (DOM) is a programming interface for HTML and XML documents. It represents the page so that programs can change the document structure, style, and content. The DOM represents the document as nodes and objects. That way, programming languages can connect to the page.
-
-A Web page is a document. This document can be either displayed in the browser window or as the HTML source. But it is the same document in both cases. The Document Object Model (DOM) represents that same document so it can be manipulated. The DOM is an object-oriented representation of the web page, which can be modified with a scripting language such as JavaScript.
+Backend development languages handle the ‘behind-the-scenes’ functionality of web applications. It’s code that connects the web to a database, manages user connections, and powers the web application itself. Backend development works in tandem with the front end to deliver the final product to the end user
 
 &nbsp;
 
-## querySelector();
+## API's
 
-The querySelector() method returns the first element that matches one or more CSS selectors. If no match is found, it returns null.
-
-Before querySelector() was introduced, developers widely used the getElementById() method which fetches an element with a specified id value.
-
-Although getElementById() is still a useful method, but with the newer querySelector() and querySelectorAll() methods we are free to target elements based on any CSS selector, thus we have more flexibility.
+API is the acronym for Application Programming Interface, which is a software intermediary that allows two applications to talk to each other. Each time you use an app like Facebook, send an instant message, or check the weather on your phone, you’re using an API.
 
 &nbsp;
 
-    document.querySelector();
-    document.querySelectorAll();
+## REST API
 
-    //The most used to access the DOM, because with it you can access class, id and tag. So each case would be:
+Let’s say you’re trying to find videos about Batman on Youtube. You open up Youtube, type “Batman” into a search field, hit enter, and you see a list of videos about Batman. A REST API works in a similar way. You search for something, and you get a list of results back from the service you’re requesting from.
 
-    document.querySelector('#id');
-    document.querySelector('.classname');
-    document.querySelector('section');
+An API is an application programming interface. It is a set of rules that allow programs to talk to each other. The developer creates the API on the server and allows the client to talk to it.
 
-The querySelector() method returns the first element that matches a specified CSS selector(s) in the document.
+REST determines how the API looks like. It stands for “Representational State Transfer”. It is a set of rules that developers follow when they create their API. One of these rules states that you should be able to get a piece of data (called a resource) when you link to a specific URL.
 
-Note: The querySelector() method only returns the first element that matches the specified selectors. To return all the matches, use the querySelectorAll() method instead.
+Each URL is called a request while the data sent back to you is called a response.
 
-&nbsp;
+The Anatomy of a Request:
+It’s important to know that a request is made up of four things:
 
-## Event Listeners
+- The endpoint
+- The method
+- The headers
+- The data (or body)
 
-An event listener is a procedure or function in a computer program that waits for an event to occur. Examples of an event are the user clicking or moving the mouse, pressing a key on the keyboard, disk I/O, network activity, or an internal timer or interrupt. The listener is programmed to react to an input or signal by calling the event's handler.
+The endpoint (or route) is the url you request for. It follows this structure:
 
-The term event listener is often specific to Java and JavaScript. In other languages, a subroutine that performs a similar function is referred to as an event handler.
+    root-endpoint/?
 
-The following JavaScript code would add an event listener to an HTML document:
+The root-endpoint is the starting point of the API you’re requesting from. The root-endpoint of Github’s API is https://api.github.com while the root-endpoint Twitter’s API is https://api.twitter.com.
 
-    document.addEventListener('click', myfunction, false);
-
-In this example, when HTML is rendered in a browser, the listener calls the function "myfunction" (defined elsewhere in the script) when the user clicks.
-
-&nbsp;
-
-## Absolute Positioning In CSS
-
-This is a very powerful type of positioning that allows you to literally place any page element exactly where you want it. You use the positioning attributes top, left, bottom, and right to set the location. Remember that these values will be relative to the next parent element with relative (or absolute) positioning. If there is no such parent, it will default all the way back up to the <html> element itself meaning it will be placed relative to the page itself.
-
-The trade-off (and most important thing to remember) about absolute positioning is that these elements are removed from the flow of elements on the page. An element with this type of positioning is not affected by other elements and it doesn’t affect other elements. This is a serious thing to consider every time you use absolute positioning. Its overuse or improper use can limit the flexibility of your site.
+The path determines the resource you’re requesting for. Think of it like an automatic answering machine that asks you to press 1 for a service, press 2 for another service, 3 for yet another service and so on.
 
 &nbsp;
 
-## Nested Event Listeners
+## fetch(URL)
 
-    const button1 = document.querySelector('#button-1');
-    const button2 = document.querySelector('#button-2');
-    const output = document.querySelector('.output');
+fetch() allows you to make network requests similar to XMLHttpRequest (XHR). The main difference is that the Fetch API uses Promises, which enables a simpler and cleaner API, avoiding callback hell and having to remember the complex API of XMLHttpRequest.
 
-    // Example of nested event listener (not reccomended)
-    // The button2 eventListener will not be set until button1 is clicked
+    fetch('http://example.com/movies.json')
+    .then(response => response.json())
+    .then(data => console.log(data));
 
-    button1.addEventListener('click', () => {
+&nbsp;
 
-        output.style.backgroundColor = 'green';
+## then()
 
-        button2.addEventListener('click', () => {
-            output.style.backgroundColor = 'red';
-        });
+The then() method returns a Promise. It takes up to two arguments: callback functions for the success and failure cases of the Promise.
 
+&nbsp;
+
+## JSON
+
+JSON (JavaScript Object Notation) is a lightweight data-interchange format. It is easy for humans to read and write. It is easy for machines to parse and generate. It is based on a subset of the JavaScript Programming Language Standard ECMA-262 3rd Edition - December 1999. JSON is a text format that is completely language independent but uses conventions that are familiar to programmers of the C-family of languages, including C, C++, C#, Java, JavaScript, Perl, Python, and many others. These properties make JSON an ideal data-interchange language.
+
+JSON is built on two structures:
+
+A collection of name/value pairs. In various languages, this is realized as an object, record, structure, dictionary, hash table, keyed list, or associative array.
+An ordered list of values. In most languages, this is realized as an array, vector, list, or sequence.
+These are universal data structures. Virtually all modern programming languages support them in one form or another. It makes sense that a data format that is interchangeable with programming languages also be based on these structures.
+
+&nbsp;
+
+## json()
+
+The json() method of the body takes a Response stream and reads it to completion. It returns a promise which resolves with a JavaScript object that is the result of parsing the body text as JSON.
+
+Note that despite the method being named json(), the result is not JSON but is instead the result of taking JSON as input and parsing it to produce a JavaScript object.
+
+    response.json().then(data => {
+    // do something with your data
     });
 
 &nbsp;
 
-## Event
+## Asynchronous Code
 
-What is an Event ?
-JavaScript's interaction with HTML is handled through events that occur when the user or the browser manipulates a page.
+Computers are asynchronous by design.
 
-When the page loads, it is called an event. When the user clicks a button, that click too is an event. Other examples include events like pressing any key, closing a window, resizing a window, etc.
+Asynchronous means that things can happen independently of the main program flow.
 
-Developers can use these events to execute JavaScript coded responses, which cause buttons to close windows, messages to be displayed to users, data to be validated, and virtually any other type of response imaginable.
-
-Events are a part of the Document Object Model (DOM) Level 3 and every HTML element contains a set of events which can trigger JavaScript Code.
+In the current consumer computers, every program runs for a specific time slot and then it stops its execution to let another program continue their execution. This thing runs in a cycle so fast that it's impossible to notice. We think our computers run many programs simultaneously, but this is an illusion.
 
 &nbsp;
 
-Examples
+## Asynchronous vs. Synchronous Programming
 
-- onclick Event Type
-  This is the most frequently used event type which occurs when a user clicks the left button of his mouse.
+Before we jump into the juicy stuff, let’s start by clarifying the difference between asynchronous and synchronous programming.
 
-- onsubmit Event Type
-  onsubmit is an event that occurs when you try to submit a form.
+In synchronous operations tasks are performed one at a time and only when one is completed, the following is unblocked. In other words, you need to wait for a task to finish to move to the next one.
 
-&nbsp;
+In asynchronous operations, on the other hand, you can move to another task before the previous one finishes. This way, with asynchronous programming you’re able to deal with multiple requests simultaneously, thus completing more tasks in a much shorter period of time.
 
-## Target Event Property
-
-The target event property returns the element that triggered the event.
-
-The target property gets the element on which the event originally occurred, opposed to the currentTarget property, which always refers to the element whose event listener triggered the event.
-
-    event.target
-
-&nbsp;
-
-## Creating DOM Elements
-
-The createElement() method creates an Element Node with the specified name.
-
-    After the element is created, use the element.appendChild() or element.insertBefore() method to insert it to the document.
-
-    // Retrieves and style the 'container' element
-    const container = document.querySelector('#container');
-    container.style.padding = '20px';
-    container.style.backgroundColor = 'purple';
-
-    // Creates a new element (not yet added to page)
-    const title = document.createElement('h1');
-    title.style.color = 'white';
-    title.style.fontFamily = 'Arial, sans-serif';
-    title.innerText = 'This is the best class ever!';
-
-    // Adds an element to the page
-    container.appendChild(title);
-
-    // We can continue to modify title after its been added to the page
-    title.style.color = 'green';
-
-    // To remove an element from the page
-    // title.remove();
+![async vs sync](/asynchronous-vs-synchronous.png)
